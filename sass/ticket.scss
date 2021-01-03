@@ -1,0 +1,97 @@
+.ticket-page{
+
+    .row{
+        max-width: 114rem;
+    }
+
+    .ticket-slide{
+
+
+        .ticket__box{
+            background: #fff;
+            padding: 5rem 9rem;
+            margin: 15rem 0;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 40px 50px rgba(0,0,0,.1);
+            @media only screen and (max-width: $tab-port){
+                padding: 3rem 6rem;
+                margin:10rem 0;
+            }
+            .img{
+                max-width: 18rem;
+                margin: 0 auto;
+                @media only screen and (max-width: $tab-port){
+                    max-width: 8rem;
+                }
+
+                img{
+                    max-width: 100%;
+                }
+            }
+            h3.ticket__name{
+                font-size: 4rem;
+                color: #262933;
+                font-weight: bold;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                @media only screen and (max-width: $tab-port){
+                    font-size: 2.5rem;
+                }
+            }
+
+            a.ticket__btn{
+                display: inline-block;
+
+                background: linear-gradient(#F14F63,#9C3441);
+                color: #fff;
+                padding: 1.4rem 3rem;
+                font-size: 2.5rem;
+            }
+        }
+
+        .owl-item{
+            transition: all .3s;
+            opacity: .5;
+            z-index: 1;
+            position: relative;
+            @media only screen and (max-width: $tab-port){
+                opacity: 1;
+            }
+        }
+        .owl-item.center{
+            transform: scale(1.4);
+            opacity: 1;
+            z-index: 2;
+            position: relative;
+            @media only screen and (max-width: $tab-port){
+                transform: scale(1);
+            }
+        }
+
+
+        .owl-nav{
+            display: block;
+            @media only screen and (max-width: $tab-port){
+                display: none;
+            }
+            .owl-prev,
+            .owl-next{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: -8%;
+                font-size: 5rem;
+
+                &:hover{
+                    background:none;
+                }
+            }
+
+            .owl-next{
+                left: inherit;
+                right: -8%;
+            }
+        }
+    }
+}

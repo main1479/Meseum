@@ -1,0 +1,238 @@
+/* ========================================= */
+/* ========= exhibition section css ========= */
+/* ========================================= */
+section.exhibition {
+    padding: 2rem 0;
+
+    .row{
+        max-width: 170rem;
+    }
+
+    h2.heading{
+        &.bottom-indicator{
+            position: relative;
+
+            &::after{
+                content: '';
+                width: .8rem;
+                height: 10rem;
+                background: $color-primary;
+                display: block;
+                margin: 2rem auto;
+                @media only screen and (max-width: $mbl-land){
+                    height: 5rem;
+                }
+            }
+        }
+    }
+
+
+
+  // =============================
+  // slider area css ==============
+
+  .item {
+    width: 100%;
+    padding: 20px;
+    @media only screen and (max-width:$mbl-land){
+        img{
+            width: 186px;
+            height: 133px;
+            object-fit: cover;
+            margin: 0 auto;
+            border-radius: 20px;
+        }
+    }
+  }
+
+
+
+  .item-text {
+    padding-top: 20px;
+  }
+  .item-text p {
+    text-align: center;
+    font-size: 3.1rem;
+    font-family: $poppins;
+    @media only screen and (max-width: $tab-land){
+        font-size: 20px;
+    }
+    @media only screen and (max-width: $mbl-land){
+        font-size: 14px;
+    }
+  }
+  .item-text .date {
+    padding-top: 15px;
+    color: #f14f63;
+    font-size: 3.1rem;
+    font-family: $poppins;
+    @media only screen and (max-width: $tab-land){
+        font-size: 20px;
+    }
+    @media only screen and (max-width: $mbl-land){
+        font-size: 14px;
+    }
+  }
+  .owl-theme .owl-controls {
+    display: none;
+  }
+  .owl-nav {
+    display: block !important;
+    @media only screen and (max-width: $mbl-land){
+        .owl-prev,
+        .owl-next{
+            position: absolute;
+            top: 20%;
+            left: 0px;
+        }
+        .owl-next{
+            left: inherit;
+            right: 0;
+
+            &::before{
+                content: '';
+                background: none;
+                border: none;
+                background: url(../img/next-bg.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 0 0;
+            }
+        }
+        .owl-prev{
+            &::before{
+                content: '';
+                background: none;
+                border: none;
+                background: url(../img/prev-bg.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 0 0;
+            }
+        }
+    }
+  }
+
+  .owl-nav button span {
+    display: none;
+  }
+  .owl-prev:before,
+  .owl-next:before {
+    content: "\f053";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    /* background: #E4E4E4; */
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    margin: 10px 2px;
+    border: 2px solid $color-primary;
+    border-radius: 4px;
+    transition: 0.3s all ease-in-out;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .owl-next:before {
+    content: "\f054";
+  }
+  .owl-prev:focus,
+  .owl-next:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+  .owl-theme .owl-nav [class*="owl-"]:hover {
+    background: none;
+    color: #fff;
+    text-decoration: none;
+  }
+  .owl-theme .owl-dots {
+    display: none;
+  }
+  .owl-prev:hover:before,
+  .owl-next:hover:before {
+    background: #383838 !important;
+    color: #e4e4e4 !important;
+    transition: 0.3s all ease-in-out;
+  }
+
+  @media only screen and (max-width: $mbl-land){
+      .owl-prev:hover:before,
+      .owl-next:hover:before {
+        background: inherit;
+        color: inherit;
+        transition: 0.3s all ease-in-out;
+      }
+    //   .owl-prev:hover:before{
+
+    //   }
+  }
+
+
+
+}
+
+
+/* ========================================= */
+/* ========= meseum details section css ========= */
+/* ========================================= */
+section.details{
+
+    .row{
+        max-width: 140rem;
+    }
+    .details__grid{
+        display: flex;
+        margin-bottom: 8rem;
+
+        &:nth-child(odd){
+            div.img{
+                padding-left: 5%;
+            }
+        }
+
+        .content{
+            flex: 0 0 50%;
+        }
+        div.img{
+            flex: 0 0 45%;
+            padding-right: 5%;
+            align-self: stretch;
+            @media only screen and (max-width: $mbl-land){
+                flex: 0 0 50%;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        h3.heading{
+            &.indicator{
+                position: relative;
+                display: inline-block;
+                line-height: 0;
+                margin: 0;
+                &::after{
+                    content:'';
+                    width: 8rem;
+                    height: 5px;
+                    background: $color-primary;
+                    display: inline-block;
+                    position: absolute;
+                    left: calc(100% + 50px);
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}   
+
+
+
+
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dovecote Museum</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- ================== font awesome ============== -->
+    <script
+      src="https://kit.fontawesome.com/bdc84e071b.js"
+      crossorigin="anonymous"
+    ></script> 
+    <!-- ================ fonts ================= -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display&family=Poppins:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ================ css============ -->
+    <link rel="stylesheet" href="css/owl.min.css" />
+    <link rel="stylesheet" href="css/owl-theme.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="reference-page">
+
+  <nav class="nav">
+      <div class="row nav-flex">
+        <a href="#" class="logo">
+          Dovecote Museum
+        </a>
+        <ul class="main__nav">
+            <li><a class="nav__link active" href="#">Home</a></li>
+            <li><a class="nav__link" href="#">About Us</a></li>
+            <li><a class="nav__link" href="#">Service & Admission</a></li>
+            <li><a class="nav__link" href="#">Contact Us</a></li>
+            <li><a class="nav__link" href="#">Reference Page</a></li>
+        </ul>
+
+        <div class="mobile__nav">
+            <div onclick="navToggle()" class="nav__trigger">
+                <div class="cursor"><span class="nav__button">&nbsp;</span></div>
+                <div class="nav__bg">&nbsp;</div>
+            </div> 
+                                                    
+            <ul class="mobile__menu">
+                <li><a onclick="navToggle()" href="#">Industry</a></li>
+                <li><a onclick="navToggle()" href="#">Experts</a></li>
+                <li><a onclick="navToggle()" href="#">Wasting money</a></li>
+                <li><a onclick="navToggle()" href="#">Experts are saying</a></li>
+                <li><a onclick="navToggle()" href="#">Services</a></li>
+                <li><a onclick="navToggle()" href="#">Testimonials</a></li>
+                <li><a onclick="navToggle()" href="#">Contact us</a></li>
+                <li>
+                  <div class="search_box">
+                    <input type="search" name="search" placeholder="Search Here">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                  </div>
+                </li>
+            </ul>
+        </div>
+        <form action="#" method="get" class="header_search">
+          <button type="button"><i class="fas fa-search"></i></button>
+          <div class="search_box">
+            <input type="search" name="search" placeholder="Search Here">
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+        </form>
+      </div>
+  </nav>
+  <!-- ===================================================== -->
+  <!-- ================  header content ==================== -->
+  <!-- ===================================================== -->
+    <section class="reference">
+      <div class="row">
+        <div class="tac mt-10 mb-5">
+          <h2 class="heading2">
+            About Us
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="flex">
+          <div class="img">
+            <img src="img/about-img.png" alt="image">
+          </div>
+          <div class="content">
+            <p class="p__text">
+              Built around 1565 by Sir Francis Willoughby in fine hand-made red brick, with his initials in black brick above the main door, the Dovecote is one of the oldest buildings in the village. It is also one of the oldest dovecotes in the country. It originally stood in the middle of a field to prevent the nervous birds being disturbed.
+              <br> <br>
+
+              It continued to be used as a dovecote even after Sir Francis built the “new” Wollaton Hall in 1588. By the 1880’s it had been converted into stables and three windows, a rear door and a floor had been added. However, after the sale of the Estate in 1926 it began to fall into disrepair and by the 1960’s was in danger of being demolished. A local campaign ensured its survival and it is now a Grade II listed building, owned by Nottingham City Council.
+              <br> <br>
+
+              Down a quiet cul-de-sac a short walk from the centre of Wollaton village lies Wollaton's hidden gem, the 16th century Dovecote where you will step into a remarkable building and back into Wollaton history. This is one of the main attractions in Wollaton but remains little known. A historical museum about the Willoughby family, 
+              about Francis Willoughby’s lute book and English
+              architect of the sixteenth century, Robert Smythson. We have updated our exhibition so there is more to see.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- =============================================== -->
+    <!-- ============= javascript files =============== -->
+    <!-- =============================================== -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/owl.js"></script>
+    <script>
+        $(document).ready(function() {
+            var owl = $('.exhibition-slide');
+          owl.owlCarousel({
+            margin: 10,
+            nav: true,
+            loop: true,
+            // animateIn: 'flipInX',
+            // animateOut: 'slideOutDown',
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: {
+              0: {
+                items: 1
+              },
+              600: {
+                items: 2
+              },
+              1000: {
+                items: 4,
+                nav: true
+              }
+            }
+          })
+
+        })
+      </script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

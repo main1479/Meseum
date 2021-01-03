@@ -1,0 +1,323 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110vh; 
+  position: relative;
+  @media only screen and (max-width: $laptop-land) {
+    align-items: flex-start;
+    min-height: 90vh;
+  }
+  @media only screen and (max-width: $laptop-port) {
+    min-height: 70vh;
+  }
+  @media only screen and (max-width: $mbl-land) {
+    min-height: auto;
+  }
+  .row {
+    max-width: 150rem;
+  }
+
+  &__grid {
+    display: flex;
+    padding-top: 150px;
+    @media only screen and (max-width: $mbl-land) {
+      padding-top: 80px;
+    }
+    .content {
+      // padding-top: 5rem;
+      flex: 0 0 50%;
+
+      .social {
+        display: flex;
+        align-items: center;
+        margin-top: 6rem;
+        @media only screen and (max-width:$tab-land){
+          margin-top: 3rem;
+        }
+        li {
+          margin: 1.5rem;
+          margin-left: 0;
+          a {
+            color: #b9b9b9;
+            transition: all 0.3s;
+
+            &:hover {
+              color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    max-width: 100rem;
+    z-index: -1;
+    @media only screen and (max-width: $mbl-land) {
+      display: none;
+    }
+  }
+  .header-img-mbl {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 50%;
+    max-width: 100rem;
+    z-index: -1;
+    @media only screen and (max-width: $mbl-land) {
+      display: block;
+    }
+  }
+
+ 
+}
+
+.logo{
+  font-size: 3rem;
+  color: #fff;
+  font-weight: bold;
+  @media only screen and (max-width:$tab-land){
+    display: none;
+}
+}
+
+.nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // height: 10rem;
+  transition:all .5s;
+  padding-top: 2rem;
+
+  &.sticky{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      // height: 8rem;
+      // background:$color-primary;
+      z-index: 8;
+      // box-shadow: 0 0 1rem $color-primary;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+  }
+}
+.main__nav{
+  display: flex;
+  align-items: center;
+  @media only screen and (max-width:$tab-land){
+      display: none;
+  }
+
+  li{ 
+      &:not(:last-child){
+          margin-right: 3.5rem;
+      }
+      a.nav__link{
+          &:link,
+          &:visited{
+              font-size: 1.8rem;
+              font-family: $poppins;
+              color:#fff;
+              display: inline-block;
+              transition:all .3s;
+              position: relative;
+          }
+      }
+  }
+}
+
+.mobile__nav{
+  // margin-top: 5rem;
+  display: none;
+  @media only screen and (max-width:$tab-land){
+      display: inline-block;
+  }
+
+  .nav__trigger{
+      width: 5rem;
+      height: 5rem;
+      // background: #000;
+      position: relative;
+      
+  }
+  .cursor{
+      width: 5rem;
+      height: 5rem;
+      // background: #000;
+      position: relative;
+      cursor: pointer;
+      z-index: 20;
+  }
+
+  .nav__bg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4rem;
+      height: 6rem;
+      background: $color-primary;
+      border-radius: 50%;
+      transform: scale(0);
+      z-index: 5;
+      transition: all .5s;
+      transition-delay: .5s;
+  }
+  .nav__button{
+      position: absolute;
+      top:0;
+      left: 0;
+      margin-top: 2rem;
+      display: block;
+      z-index: 20;
+      &,
+      &::before,
+      &::after{
+          content:'';
+          width: 4.5rem;
+          height: 2.5px;
+          background: #fff;
+          transition:all .5s;
+          display: block;
+          
+      }
+      &:before{
+          position: absolute;
+          left: 0;
+          top: -1.2rem;
+      }
+      &::after{
+          position: absolute;
+          left: 0;
+          top: 1.2rem;
+      }
+  }
+
+  .mobile__menu{
+      position: fixed;
+      top: 0;
+      right: 0;
+      width:0;
+      height: 100vh;
+      // background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .5s;
+      overflow: hidden;
+      transition-delay:0s;
+
+      a{
+          display: inline-block;
+          text-transform: capitalize;
+          font-size: 2.3rem;
+          font-family: $poppins;
+          color:#fff;
+          transition:all .4s;
+          margin-bottom: .5rem;
+          background:linear-gradient(90deg,transparent 0%, transparent 50%, rgb(32, 32, 32) 50%);
+          background-size: 201%;
+          padding: .5rem 3rem;
+
+          &:hover{
+              background-position: -100%;
+              transform: translateX(1rem);
+          }
+      }
+  }
+
+  &.active{
+
+      .nav__bg{
+          transform:scale(50);
+          transition-delay: 0s;
+      }
+
+      .mobile__menu{
+          opacity: 1;
+          visibility: visible;
+          width:100%;
+          transition-delay: .5s;
+      }
+
+      .nav__button{
+          background:transparent;
+          &:before{
+              transform: rotate(135deg);
+              top: 0;
+          }
+          &::after{
+              transform: rotate(-135deg);
+              top: 0;
+          }
+      }
+  }
+
+
+  
+
+}
+
+.header_search button {
+  color: #fff;
+  font-size: 2.8rem;
+  cursor: pointer;
+  position: relative;
+  text-align: right;
+
+  @media only screen and (max-width: $tab-land) {
+    display: none;
+  }
+}
+
+.header_search .search_box {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: absolute;
+  top: 100%;
+  right: 50px;
+  padding: 1.5rem;
+  width: 40rem;
+  height: 8.5rem;
+  background: #fff;
+  display: none;
+  border-radius: .3rem;
+}
+
+.search_box input {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  width: 87%;
+  background: #2B2B2B;
+  padding: 1.3rem;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.search_box input::placeholder {
+  color: #fff;
+}
+
+.search_box button {
+  color: #000;
+  width: 10%;
+}
+
+
+

@@ -1,0 +1,52 @@
+.contact-page{
+
+
+    .contact{
+        padding-bottom: 8rem;
+
+        .content{
+            @media only screen and (max-width:$tab-land){
+                h3.heading{
+                    color: #F14F63;
+                }
+            }
+        }
+        h3.heading{
+            font-size: 3.4rem;
+        }
+        form.form{
+
+            input,
+            textarea{
+                display: block;
+                width: 100%;
+                padding: 10px 15px;
+                font-size: 2.5rem;
+                color: #fff;
+                font-family: inherit;
+                font-weight: 200;
+                margin-bottom: 40px;
+                border-bottom: 1px solid #707070;
+                border-left: 1px solid #707070;
+                outline: 0;
+
+                &:focus{
+                    outline: 0;
+                }
+            }
+
+            textarea{
+                min-height: 25rem;
+            }
+
+            button{
+                border: 0;
+                background: #F14F63;
+                font-size: 2.5rem;
+                color: #fff;
+                padding: 1.5rem 3rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

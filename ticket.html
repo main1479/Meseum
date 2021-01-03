@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dovecote Museum</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- ================== font awesome ============== -->
+    <script
+      src="https://kit.fontawesome.com/bdc84e071b.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- ================ fonts ================= -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display&family=Poppins:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ================ css============ -->
+    <link rel="stylesheet" href="css/owl.min.css" />
+    <link rel="stylesheet" href="css/owl-theme.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="reference-page ticket-page">
+
+    <nav class="nav">
+      <div class="row nav-flex">
+        <a href="#" class="logo">
+          Dovecote Museum
+        </a>
+        <ul class="main__nav">
+            <li><a class="nav__link active" href="#">Home</a></li>
+            <li><a class="nav__link" href="#">About Us</a></li>
+            <li><a class="nav__link" href="#">Service & Admission</a></li>
+            <li><a class="nav__link" href="#">Contact Us</a></li>
+            <li><a class="nav__link" href="#">Reference Page</a></li>
+        </ul>
+
+        <div class="mobile__nav">
+            <div onclick="navToggle()" class="nav__trigger">
+                <div class="cursor"><span class="nav__button">&nbsp;</span></div>
+                <div class="nav__bg">&nbsp;</div>
+            </div> 
+                                                    
+            <ul class="mobile__menu">
+                <li><a onclick="navToggle()" href="#">Industry</a></li>
+                <li><a onclick="navToggle()" href="#">Experts</a></li>
+                <li><a onclick="navToggle()" href="#">Wasting money</a></li>
+                <li><a onclick="navToggle()" href="#">Experts are saying</a></li>
+                <li><a onclick="navToggle()" href="#">Services</a></li>
+                <li><a onclick="navToggle()" href="#">Testimonials</a></li>
+                <li><a onclick="navToggle()" href="#">Contact us</a></li>
+                <li>
+                  <div class="search_box">
+                    <input type="search" name="search" placeholder="Search Here">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                  </div>
+                </li>
+            </ul>
+        </div>
+        <form action="#" method="get" class="header_search">
+          <button type="button"><i class="fas fa-search"></i></button>
+          <div class="search_box">
+            <input type="search" name="search" placeholder="Search Here">
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+        </form>
+      </div>
+  </nav>
+  <!-- ===================================================== -->
+  <!-- ================  header content ==================== -->
+  <!-- ===================================================== -->
+    <section class="reference">
+      <div class="row">
+        <div class="tac mt-10 mb-5">
+          <h2 class="heading2">
+            Admission Tickets
+          </h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="owl-carousel owl-theme ticket-slide">
+           <div class="ticket__box">
+              <figure class="img">
+                <img src="img/ticket.png" alt="image" class="img">
+              </figure>
+              <h3 class="ticket__name">Standard</h3>
+              <a href="#" class="ticket__btn">
+                Buy
+              </a>
+           </div>
+           <div class="ticket__box">
+              <figure class="img">
+                <img src="img/ticket.png" alt="image" class="img">
+              </figure>
+              <h3 class="ticket__name">V.I.P</h3>
+              <a href="#" class="ticket__btn">
+                Buy
+              </a>
+           </div>
+           <div class="ticket__box">
+              <figure class="img">
+                <img src="img/ticket.png" alt="image" class="img">
+              </figure>
+              <h3 class="ticket__name">Basic</h3>
+              <a href="#" class="ticket__btn">
+                Buy
+              </a>
+           </div>
+        </div>
+      </div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- =============================================== -->
+    <!-- ============= javascript files =============== -->
+    <!-- =============================================== -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/owl.js"></script>
+    <script>
+        $(document).ready(function() {
+            var owl = $('.ticket-slide');
+          owl.owlCarousel({
+            margin: 10,
+            nav: true,
+            loop: true,
+            // animateIn: 'flipInX',
+            // animateOut: 'slideOutDown',
+            autoplay: true,
+            autoplaySpeed: 2000,
+            navText:['<i class="fas fa-chevron-left"></i>','<i class="fas fa-chevron-right"></i>'],
+            center: true,
+            responsive: {
+              0: {
+                items: 1
+              },
+              600: {
+                items: 3
+              },
+              1000: {
+                items: 3,
+                nav: true
+              }
+            }
+          })
+
+        })
+      </script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

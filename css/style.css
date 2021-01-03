@@ -1,0 +1,1147 @@
+/* ======================================================= */
+/* ================ basic reset and setup ================ */
+/* ======================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 57%;
+  }
+}
+@media only screen and (max-width: 64em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-size: 3.2rem;
+  line-height: 1.4;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  background: #2b2b2b;
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 64em) {
+  body {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 35.9375em) {
+  .logo img {
+    width: 18rem;
+  }
+}
+
+::selection {
+  background: #8837ea;
+  color: #fff;
+}
+
+input,
+textarea,
+button {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+/* =========================================================== */
+/* ====================== reuseable classes ================== */
+/* =========================================================== */
+
+.row {
+  width: 95%;
+  max-width: 160rem;
+  margin: 0 auto;
+}
+
+.nav-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 1rem 4rem;
+  color: #fff;
+  font-size: 2.9rem;
+  font-family: "Poppins", sans-serif;
+  border-radius: 100px;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  background: #8837ea;
+}
+.btn:hover,
+.btn:link:hover,
+.btn:visited:hover {
+  background: #fff;
+  color: #8837ea;
+}
+@media only screen and (max-width: 35.9375em) {
+  .btn,
+  .btn:link,
+  .btn:visited {
+    font-size: 2rem;
+  }
+}
+
+.btn.btn-icon,
+.btn.btn-icon:link,
+.btn.btn-icon:visited {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn.btn-icon svg,
+.btn.btn-icon:link svg,
+.btn.btn-icon:visited svg {
+  transition: all 0.3s;
+  margin-left: 1rem;
+}
+.btn.btn-icon:hover svg,
+.btn.btn-icon:link:hover svg,
+.btn.btn-icon:visited:hover svg {
+  margin-left: 2rem;
+}
+
+.red {
+  color: #f14f63;
+}
+
+.nav-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tar {
+  text-align: right;
+}
+
+img.img {
+  max-width: 100%;
+}
+
+.m--1 {
+  margin: 0.5rem;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+@media only screen and (max-width: 35.9375em) {
+  .mt-3 {
+    margin-top: 1.5rem;
+  }
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.mt-10 {
+  margin-top: 10rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+@media only screen and (max-width: 35.9375em) {
+  .mb-3 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+.mb-5 {
+  margin-bottom: 5rem;
+}
+
+.mb-10 {
+  margin-bottom: 10rem;
+}
+
+.pt-1 {
+  padding-top: 1rem;
+}
+
+.pt-2 {
+  padding-top: 2rem;
+}
+
+.pt-3 {
+  padding-top: 3rem;
+}
+
+.pt-4 {
+  padding-top: 4rem;
+}
+
+.pt-5 {
+  padding-top: 5rem;
+}
+
+.pt-10 {
+  padding-top: 10rem;
+}
+
+.pb-1 {
+  padding-bottom: 1rem;
+}
+
+.pb-2 {
+  padding-bottom: 2rem;
+}
+
+.pb-3 {
+  padding-bottom: 3rem;
+}
+
+.pb-4 {
+  padding-bottom: 4rem;
+}
+
+.pb-5 {
+  padding-bottom: 5rem;
+}
+
+.pb-10 {
+  padding-bottom: 10rem;
+}
+
+.db {
+  display: block;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.df {
+  display: flex;
+}
+
+.aic {
+  align-items: center;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.fdc {
+  flex-direction: column;
+}
+/* ======================================================= */
+/* ================== global typography ================== */
+/* ======================================================= */
+
+h1.heading {
+  font-size: 7.6rem;
+  font-weight: bold;
+  line-height: 1;
+}
+@media only screen and (max-width: 75em) {
+  h1.heading {
+    font-size: 5rem;
+  }
+}
+@media only screen and (max-width: 35.9375em) {
+  h1.heading {
+    font-size: 20px;
+  }
+}
+
+h2.heading {
+  font-size: 10rem;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1;
+}
+@media only screen and (max-width: 75em) {
+  h2.heading {
+    font-size: 5rem;
+  }
+}
+@media only screen and (max-width: 35.9375em) {
+  h2.heading {
+    font-size: 30px;
+  }
+}
+
+h2.heading2 {
+  font-size: 8rem;
+  font-weight: 400;
+  font-family: "Playfair Display", serif;
+}
+@media only screen and (max-width: 75em) {
+  h2.heading2 {
+    font-size: 5rem;
+  }
+}
+@media only screen and (max-width: 35.9375em) {
+  h2.heading2 {
+    font-size: 22px;
+  }
+}
+
+h3.heading {
+  font-size: 4.1rem;
+  font-family: "Poppins", sans-serif;
+  color: #8837ea;
+  font-weight: 400;
+}
+@media only screen and (max-width: 75em) {
+  h3.heading {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 35.9375em) {
+  h3.heading {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 35.9375em) {
+  p.p__text {
+    font-size: 12px;
+  }
+}
+
+p.p__text.thin {
+  font-size: 2.6rem;
+  font-weight: 200;
+}
+
+/* ================= home page header area ======================== */
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110vh;
+  position: relative;
+}
+@media only screen and (max-width: 75em) {
+  .header {
+    align-items: flex-start;
+    min-height: 90vh;
+  }
+}
+@media only screen and (max-width: 64em) {
+  .header {
+    min-height: 70vh;
+  }
+}
+@media only screen and (max-width: 35.9375em) {
+  .header {
+    min-height: auto;
+  }
+}
+.header .row {
+  max-width: 150rem;
+}
+.header__grid {
+  display: flex;
+  padding-top: 150px;
+}
+@media only screen and (max-width: 35.9375em) {
+  .header__grid {
+    padding-top: 80px;
+  }
+}
+.header__grid .content {
+  flex: 0 0 50%;
+}
+.header__grid .content .social {
+  display: flex;
+  align-items: center;
+  margin-top: 6rem;
+}
+@media only screen and (max-width: 62em) {
+  .header__grid .content .social {
+    margin-top: 3rem;
+  }
+}
+.header__grid .content .social li {
+  margin: 1.5rem;
+  margin-left: 0;
+}
+.header__grid .content .social li a {
+  color: #b9b9b9;
+  transition: all 0.3s;
+}
+.header__grid .content .social li a:hover {
+  color: #8837ea;
+}
+.header .header-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  max-width: 100rem;
+  z-index: -1;
+}
+@media only screen and (max-width: 35.9375em) {
+  .header .header-img {
+    display: none;
+  }
+}
+.header .header-img-mbl {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 50%;
+  max-width: 100rem;
+  z-index: -1;
+}
+@media only screen and (max-width: 35.9375em) {
+  .header .header-img-mbl {
+    display: block;
+  }
+}
+
+.logo {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: bold;
+}
+@media only screen and (max-width: 62em) {
+  .logo {
+    display: none;
+  }
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.5s;
+  padding-top: 2rem;
+}
+.nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 8;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.main__nav {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 62em) {
+  .main__nav {
+    display: none;
+  }
+}
+.main__nav li:not(:last-child) {
+  margin-right: 3.5rem;
+}
+.main__nav li a.nav__link:link,
+.main__nav li a.nav__link:visited {
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  display: inline-block;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.mobile__nav {
+  display: none;
+}
+@media only screen and (max-width: 62em) {
+  .mobile__nav {
+    display: inline-block;
+  }
+}
+.mobile__nav .nav__trigger {
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+}
+.mobile__nav .cursor {
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  cursor: pointer;
+  z-index: 20;
+}
+.mobile__nav .nav__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: 6rem;
+  background: #8837ea;
+  border-radius: 50%;
+  transform: scale(0);
+  z-index: 5;
+  transition: all 0.5s;
+  transition-delay: 0.5s;
+}
+.mobile__nav .nav__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 2rem;
+  display: block;
+  z-index: 20;
+}
+.mobile__nav .nav__button,
+.mobile__nav .nav__button::before,
+.mobile__nav .nav__button::after {
+  content: "";
+  width: 4.5rem;
+  height: 2.5px;
+  background: #fff;
+  transition: all 0.5s;
+  display: block;
+}
+.mobile__nav .nav__button:before {
+  position: absolute;
+  left: 0;
+  top: -1.2rem;
+}
+.mobile__nav .nav__button::after {
+  position: absolute;
+  left: 0;
+  top: 1.2rem;
+}
+.mobile__nav .mobile__menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  overflow: hidden;
+  transition-delay: 0s;
+}
+.mobile__nav .mobile__menu a {
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 2.3rem;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  transition: all 0.4s;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 50%,
+    #202020 50%
+  );
+  background-size: 201%;
+  padding: 0.5rem 3rem;
+}
+.mobile__nav .mobile__menu a:hover {
+  background-position: -100%;
+  transform: translateX(1rem);
+}
+.mobile__nav.active .nav__bg {
+  transform: scale(50);
+  transition-delay: 0s;
+}
+.mobile__nav.active .mobile__menu {
+  opacity: 1;
+  visibility: visible;
+  width: 100%;
+  transition-delay: 0.5s;
+}
+.mobile__nav.active .nav__button {
+  background: transparent;
+}
+.mobile__nav.active .nav__button:before {
+  transform: rotate(135deg);
+  top: 0;
+}
+.mobile__nav.active .nav__button::after {
+  transform: rotate(-135deg);
+  top: 0;
+}
+
+.header_search button {
+  color: #fff;
+  font-size: 2.8rem;
+  cursor: pointer;
+  position: relative;
+  text-align: right;
+}
+@media only screen and (max-width: 62em) {
+  .header_search button {
+    display: none;
+  }
+}
+
+.header_search .search_box {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: absolute;
+  top: 100%;
+  right: 50px;
+  padding: 1.5rem;
+  width: 40rem;
+  height: 8.5rem;
+  background: #fff;
+  display: none;
+  border-radius: 0.3rem;
+}
+
+.search_box input {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  width: 87%;
+  background: #2b2b2b;
+  padding: 1.3rem;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.search_box input::placeholder {
+  color: #fff;
+}
+
+.search_box button {
+  color: #000;
+  width: 10%;
+}
+
+/* ========================================= */
+/* ========= exhibition section css ========= */
+/* ========================================= */
+section.exhibition {
+  padding: 2rem 0;
+}
+section.exhibition .row {
+  max-width: 170rem;
+}
+section.exhibition h2.heading.bottom-indicator {
+  position: relative;
+}
+section.exhibition h2.heading.bottom-indicator::after {
+  content: "";
+  width: 0.8rem;
+  height: 10rem;
+  background: #8837ea;
+  display: block;
+  margin: 2rem auto;
+}
+@media only screen and (max-width: 35.9375em) {
+  section.exhibition h2.heading.bottom-indicator::after {
+    height: 5rem;
+  }
+}
+section.exhibition .item {
+  width: 100%;
+  padding: 20px;
+}
+@media only screen and (max-width: 35.9375em) {
+  section.exhibition .item img {
+    width: 186px;
+    height: 133px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+}
+section.exhibition .item-text {
+  padding-top: 20px;
+}
+section.exhibition .item-text p {
+  text-align: center;
+  font-size: 3.1rem;
+  font-family: "Poppins", sans-serif;
+}
+@media only screen and (max-width: 62em) {
+  section.exhibition .item-text p {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 35.9375em) {
+  section.exhibition .item-text p {
+    font-size: 14px;
+  }
+}
+section.exhibition .item-text .date {
+  padding-top: 15px;
+  color: #f14f63;
+  font-size: 3.1rem;
+  font-family: "Poppins", sans-serif;
+}
+@media only screen and (max-width: 62em) {
+  section.exhibition .item-text .date {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 35.9375em) {
+  section.exhibition .item-text .date {
+    font-size: 14px;
+  }
+}
+section.exhibition .owl-theme .owl-controls {
+  display: none;
+}
+section.exhibition .owl-nav {
+  display: block !important;
+}
+@media only screen and (max-width: 35.9375em) {
+  section.exhibition .owl-nav .owl-prev,
+  section.exhibition .owl-nav .owl-next {
+    position: absolute;
+    top: 20%;
+    left: 0px;
+  }
+  section.exhibition .owl-nav .owl-next {
+    left: inherit;
+    right: 0;
+  }
+  section.exhibition .owl-nav .owl-next::before {
+    content: "";
+    background: none;
+    border: none;
+    background: url(../img/next-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+  }
+  section.exhibition .owl-nav .owl-prev::before {
+    content: "";
+    background: none;
+    border: none;
+    background: url(../img/prev-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+  }
+}
+section.exhibition .owl-nav button span {
+  display: none;
+}
+section.exhibition .owl-prev:before,
+section.exhibition .owl-next:before {
+  content: "\f053";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  /* background: #E4E4E4; */
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  margin: 10px 2px;
+  border: 2px solid #8837ea;
+  border-radius: 4px;
+  transition: 0.3s all ease-in-out;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.exhibition .owl-next:before {
+  content: "\f054";
+}
+section.exhibition .owl-prev:focus,
+section.exhibition .owl-next:focus {
+  outline: 0;
+  box-shadow: none;
+}
+section.exhibition .owl-theme .owl-nav [class*="owl-"]:hover {
+  background: none;
+  color: #fff;
+  text-decoration: none;
+}
+section.exhibition .owl-theme .owl-dots {
+  display: none;
+}
+section.exhibition .owl-prev:hover:before,
+section.exhibition .owl-next:hover:before {
+  background: #383838 !important;
+  color: #e4e4e4 !important;
+  transition: 0.3s all ease-in-out;
+}
+@media only screen and (max-width: 35.9375em) {
+  section.exhibition .owl-prev:hover:before,
+  section.exhibition .owl-next:hover:before {
+    background: inherit;
+    color: inherit;
+    transition: 0.3s all ease-in-out;
+  }
+}
+
+/* ========================================= */
+/* ========= meseum details section css ========= */
+/* ========================================= */
+section.details .row {
+  max-width: 140rem;
+}
+
+section.details .details__grid {
+  display: flex;
+  margin-bottom: 8rem;
+}
+section.details .details__grid:nth-child(odd) div.img {
+  padding-left: 5%;
+}
+section.details .details__grid .content {
+  flex: 0 0 50%;
+}
+section.details .details__grid div.img {
+  flex: 0 0 45%;
+  padding-right: 5%;
+  align-self: stretch;
+}
+@media only screen and (max-width: 35.9375em) {
+  section.details .details__grid div.img {
+    flex: 0 0 50%;
+  }
+}
+section.details .details__grid div.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+section.details .details__grid h3.heading.indicator {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  margin: 0;
+}
+section.details .details__grid h3.heading.indicator::after {
+  content: "";
+  width: 8rem;
+  height: 5px;
+  background: #8837ea;
+  display: inline-block;
+  position: absolute;
+  left: calc(100% + 50px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ============================================================ */
+/* ======================== home page end ===================== */
+/* ============================================================ */
+
+/* ======================== reference page area and all sub pages css ================ */
+
+.reference-page section.reference {
+  padding-top: 100px;
+}
+@media only screen and (max-width: 62em) {
+  .reference-page section.reference {
+    padding-top: 0;
+  }
+  .reference-page section.reference h2.heading2 {
+    font-size: 6rem;
+  }
+}
+.reference-page section.reference .flex {
+  display: flex;
+}
+@media only screen and (max-width: 62em) {
+  .reference-page section.reference .flex {
+    flex-wrap: wrap;
+  }
+}
+.reference-page section.reference .flex .img {
+  flex: 0 0 50%;
+  padding-right: 5rem;
+}
+@media only screen and (max-width: 62em) {
+  .reference-page section.reference .flex .img {
+    flex: 0 0 100%;
+    order: 2;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    padding-right: 0;
+  }
+}
+.reference-page section.reference .flex .img img {
+  width: 100%;
+}
+@media only screen and (max-width: 62em) {
+  .reference-page section.reference .flex .content {
+    text-align: center;
+    flex: 0 0 100%;
+  }
+}
+.reference-page section.reference .flex .content h2.heading2 {
+  margin-bottom: 3rem;
+}
+@media only screen and (max-width: 62em) {
+  .reference-page section.reference .flex .content h2.heading2 {
+    display: none;
+  }
+}
+.reference-page section.reference .flex .content a.ref__link {
+  color: #fff;
+  font-size: 3rem;
+  display: inline-block;
+  margin-bottom: 4rem;
+  word-break: break-all;
+}
+.reference-page section.reference .flex .content a.ref__link p.p__text {
+  color: #fff;
+  hyphens: auto;
+}
+@media only screen and (max-width: 62em) {
+  .reference-page section.reference .flex .content a.ref__link p.p__text {
+    font-size: 2.5rem;
+  }
+}
+/* ================================================================= */
+/* ====================== contact page area ======================== */
+/* ================================================================= */
+
+.contact-page .contact {
+  padding-bottom: 8rem;
+}
+@media only screen and (max-width: 62em) {
+  .contact-page .contact .content h3.heading {
+    color: #f14f63;
+  }
+}
+.contact-page .contact h3.heading {
+  font-size: 3.4rem;
+}
+.contact-page .contact form.form input,
+.contact-page .contact form.form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 2.5rem;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 200;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #707070;
+  border-left: 1px solid #707070;
+  outline: 0;
+}
+.contact-page .contact form.form input:focus,
+.contact-page .contact form.form textarea:focus {
+  outline: 0;
+}
+.contact-page .contact form.form textarea {
+  min-height: 25rem;
+}
+.contact-page .contact form.form button {
+  border: 0;
+  background: #f14f63;
+  font-size: 2.5rem;
+  color: #fff;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+}
+
+/* ==================================================== */
+/* ==================== ticket page =================== */
+/* ==================================================== */
+
+.ticket-page .row {
+  max-width: 114rem;
+}
+
+.ticket-page .ticket-slide .ticket__box {
+  background: #fff;
+  padding: 5rem 9rem;
+  margin: 15rem 0;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 40px 50px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 48em) {
+  .ticket-page .ticket-slide .ticket__box {
+    padding: 3rem 6rem;
+    margin: 10rem 0;
+  }
+}
+.ticket-page .ticket-slide .ticket__box .img {
+  max-width: 18rem;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 48em) {
+  .ticket-page .ticket-slide .ticket__box .img {
+    max-width: 8rem;
+  }
+}
+.ticket-page .ticket-slide .ticket__box .img img {
+  max-width: 100%;
+}
+.ticket-page .ticket-slide .ticket__box h3.ticket__name {
+  font-size: 4rem;
+  color: #262933;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 48em) {
+  .ticket-page .ticket-slide .ticket__box h3.ticket__name {
+    font-size: 2.5rem;
+  }
+}
+.ticket-page .ticket-slide .ticket__box a.ticket__btn {
+  display: inline-block;
+  background: linear-gradient(#f14f63, #9c3441);
+  color: #fff;
+  padding: 1.4rem 3rem;
+  font-size: 2.5rem;
+}
+
+.ticket-page .ticket-slide .owl-item {
+  transition: all 0.3s;
+  opacity: 0.5;
+  z-index: 1;
+  position: relative;
+}
+@media only screen and (max-width: 48em) {
+  .ticket-page .ticket-slide .owl-item {
+    opacity: 1;
+  }
+}
+
+.ticket-page .ticket-slide .owl-item.center {
+  transform: scale(1.4);
+  opacity: 1;
+  z-index: 2;
+  position: relative;
+}
+@media only screen and (max-width: 48em) {
+  .ticket-page .ticket-slide .owl-item.center {
+    transform: scale(1);
+  }
+}
+
+.ticket-page .ticket-slide .owl-nav {
+  display: block;
+}
+@media only screen and (max-width: 48em) {
+  .ticket-page .ticket-slide .owl-nav {
+    display: none;
+  }
+}
+.ticket-page .ticket-slide .owl-nav .owl-prev,
+.ticket-page .ticket-slide .owl-nav .owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -8%;
+  font-size: 5rem;
+}
+.ticket-page .ticket-slide .owl-nav .owl-prev:hover,
+.ticket-page .ticket-slide .owl-nav .owl-next:hover {
+  background: none;
+}
+.ticket-page .ticket-slide .owl-nav .owl-next {
+  left: inherit;
+  right: -8%;
+}

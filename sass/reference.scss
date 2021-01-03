@@ -1,0 +1,63 @@
+.reference-page{
+    // overflow-x: hidden;
+
+    section.reference{
+        padding-top: 100px;
+
+        @media only screen and (max-width:$tab-land){
+            padding-top: 0;
+            h2.heading2{
+                font-size: 6rem;
+            }
+        }
+        .flex{
+            display: flex;
+            @media only screen and (max-width:$tab-land){
+                flex-wrap: wrap;
+            }
+
+            .img{
+                flex: 0 0 50%;
+                padding-right: 5rem;
+                @media only screen and (max-width:$tab-land){
+                    flex: 0 0 100%;
+                    order: 2;
+                    margin-top: 8rem;
+                    margin-bottom: 8rem;
+                    padding-right: 0;
+                }
+                img{
+                    width: 100%;
+                }
+            }
+            .content{
+                @media only screen and (max-width:$tab-land){
+                    text-align: center;
+                    flex: 0 0 100%;
+
+                    
+                }
+                h2.heading2{
+                    margin-bottom: 3rem;
+                    @media only screen and (max-width:$tab-land){
+                        display: none;
+                    }
+                }
+                a.ref__link{
+                    color: #fff;
+                    font-size: 3rem;
+                    display: inline-block;
+                    margin-bottom: 4rem;
+                    word-break: break-all;
+                    p.p__text{
+                        color: #fff;
+                        hyphens: auto;
+                        @media only screen and (max-width:$tab-land){
+                            font-size: 2.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
